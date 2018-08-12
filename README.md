@@ -6,7 +6,7 @@ An easy-to-use library for reading the ConstantPool section of class files deali
 ```java
 try {
     byte[] classbytes = IO.dump(new FileInputStream("ClassFile.class"));
-    ClassReader cr = new ClassReader(classbytes);
+    CpoolReader cr = new CpoolReader(classbytes);
     cr.read();
 
     for (Constant cst : cr.getCpool()) {
